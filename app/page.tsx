@@ -81,7 +81,7 @@ export default function Home() {
       variants={variants}
       >
         <p className="text-3xl font-bold text-white/30 text-center mb-8">Skills</p>
-        <div className="flex flex-wrap gap-2 w-[90%] md:w-[60%] mx-auto">
+        <div className="flex flex-wrap justify-center gap-2 w-[90%] md:w-[64%] mx-auto">
             <p className='skill'>HTML</p>
             <p className='skill'>CSS</p>
             <p className='skill'>TailwindCSS</p>
@@ -156,7 +156,7 @@ export default function Home() {
                 variants={variants}
         >
 
-          <p className="text-3xl font-bold text-white/30 text-center my-16">Experience</p>
+          <p className="text-3xl font-bold text-white/30 text-center my-12">Experience</p>
           <div className="flex flex-col gap-y-16">
           <Experience 
             company="Tintash, Pakistan"
