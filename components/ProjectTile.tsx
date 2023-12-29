@@ -35,11 +35,11 @@ export const ProjectTile = ({url, title, description, techs, classes}: ProjectTi
       
     return (
         <Link href={url}>
-        <div className={`text-white bg-gray-300/10 p-6 rounded-xl w-full cursor-pointer hover:scale-[102%] hover:bg-gray-100/20 transition`}
+        <div className={`text-center md:text-start text-white bg-gray-300/10 p-6 rounded-xl w-full cursor-pointer hover:scale-[102%] hover:bg-gray-100/20 transition`}
         onMouseEnter={handleMouseEnterControls}
         onMouseLeave={handleMouseLeaveControls}
         >
-            <div className="flex gap-x-4 items-center">
+            <div className="flex gap-x-4 items-center justify-center md:justify-start">
             <p className="font-bold text-gray-200 text-xl">{title}</p>
             {<motion.div className=""
             // animate={isHovered ? "hover" : "initial"}

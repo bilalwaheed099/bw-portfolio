@@ -61,10 +61,10 @@ export default function Home() {
 
       </motion.div> */}
       {/* HERO */}
-      <div className="w-[72%] mx-auto flex flex-col justify-center items-center h-screen">
-        <p className="text-gray-400 font-bold text-[3.2rem] text-center">Bilal Waheed</p>
-        <p className="text-gray-100 font-semibold text-[1.8rem]">Full-stack engineer</p>
-        <p className="text-white/30 w-1/2 mt-2 text-center">
+      <div className="w-[90%] md:w-[72%] mx-auto flex flex-col justify-center items-center h-screen">
+        <p className="text-gray-400 font-bold text-[2.6rem] md:text-[3.2rem] text-center">Bilal Waheed</p>
+        <p className="text-gray-100 font-semibold text-[1.4rem] text-[1.8rem] text-center">Full-stack engineer</p>
+        <p className="text-white/30 w-3/4 md:w-1/2 my-3 text-center">
         Lorem ipsum dolor sit amet incididunt, quis nostrud exercitation ullamco laboris nisi ut aliquip ex proident, sunt in culpa qui officia deserunt mollit anim id est laborum
         </p>
         <div className="flex gap-x-5 mt-4 items-center z-10">
@@ -81,7 +81,7 @@ export default function Home() {
       variants={variants}
       >
         <p className="text-3xl font-bold text-white/30 text-center mb-8">Skills</p>
-        <div className="flex flex-wrap gap-2 w-[60%] mx-auto">
+        <div className="flex flex-wrap gap-2 w-[90%] md:w-[60%] mx-auto">
             <p className='skill'>HTML</p>
             <p className='skill'>CSS</p>
             <p className='skill'>TailwindCSS</p>
@@ -108,15 +108,15 @@ export default function Home() {
         </div>
       </motion.div>
       {/* Projects */}
-      <div className="flex flex-col-reverse w-[80%] md:w-[72%] mx-auto">
-      <motion.div className=" flex-1 mx-auto w-[80%]"
+      <div className="flex flex-col-reverse w-[90%] md:[w-80%] md:w-[72%] mx-auto">
+      <motion.div className=" flex-1 mx-auto w-[90%] md:w-[80%]"
                       ref={ref3}
                       animate={controls3}
                       initial="hidden"
                       variants={variants}
       >
         <p className="text-3xl font-bold text-white/30 text-center my-16">Projects</p>
-        <div className="w-full mt-4 flex flex-col gap-6">
+        <div className="w-full mt-4 flex flex-col gap-10">
         <ProjectTile 
           title="The Lounge" 
           description="A platform where users can create lobbies and play the classic multiplayer card game of Court Piece with with friends." 
@@ -167,7 +167,7 @@ export default function Home() {
             />
           <Experience 
             company="AlphaSquad, Pakistan"
-            title="Frontend Engineer" 
+            title="Frontend Developer (Intern)" 
             time="July 2021 - Sept 2021"
             desc="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words"
             skills={["HTML", "CSS", "JavaScript", "React", "Figma", "Webpack"]}
