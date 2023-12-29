@@ -1,113 +1,185 @@
+"use client"
+import { ProjectTile } from '@/components/ProjectTile'
 import Image from 'next/image'
+import {useAnimation, motion} from 'framer-motion'
+import { useEffect, useRef, useState } from 'react';
+import { Experience } from '@/components/Experience';
+import Link from 'next/link';
+import { useInView } from "react-intersection-observer";
+
+const variants = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, scale: 0.6 }
+};
 
 export default function Home() {
+
+  const [mousePos, setMousePos] = useState({x: 0, y: 0});
+
+  function getCoordinates(e: any) {
+    const position = {
+      x: e.pageX,
+      y: e.pageY
+    }
+
+    return position;
+  }
+
+    const controls = useAnimation();
+    const controls2 = useAnimation();
+    const controls3 = useAnimation();
+    const [ref, inView] = useInView();
+    const [ref2, inView2] = useInView();
+    const [ref3, inView3] = useInView();
+    useEffect(() => {
+      if (inView) {
+        controls.start("visible");
+      }
+      if (inView2) {
+        controls2.start("visible");
+      }
+      if (inView3) {
+        controls3.start("visible");
+      }
+    }, [controls, controls2, controls3, inView, inView2, inView3]);
+
+  const handleMouseMove = (e: any) => {
+    setMousePos(getCoordinates(e));
+  }
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <div className='bg-black min-h-screen pb-24' onMouseMove={e => handleMouseMove(e)}>
+      {/* <motion.div
+        className="w-[240px] h-[240px] bg-gray-300/10 absolute rounded-full blur-2xl"
+        animate={{
+          x: mousePos.x - 120,
+          y: mousePos.y - 120
+        }}
+        transition={{ type: "tween" }}
+      >
+
+      </motion.div> */}
+      {/* HERO */}
+      <div className="w-[72%] mx-auto flex flex-col justify-center items-center h-screen">
+        <p className="text-gray-400 font-bold text-[3.2rem] text-center">Bilal Waheed</p>
+        <p className="text-gray-100 font-semibold text-[1.8rem]">Full-stack engineer</p>
+        <p className="text-white/30 w-1/2 mt-2 text-center">
+        Lorem ipsum dolor sit amet incididunt, quis nostrud exercitation ullamco laboris nisi ut aliquip ex proident, sunt in culpa qui officia deserunt mollit anim id est laborum
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <div className="flex gap-x-5 mt-4 items-center z-10">
+          <Link href="https://www.linkedin.com/in/bilal-w-27789ba4/" target='_blank'><Image className="w-9 h-9 hover:scale-110 cursor-pointer" src="/linkedin.svg" alt={'github'} width={24} height={24} /></Link>
+          <Link href="https://github.com/bilalwaheed099" target='_blank'><Image className="w-8 h-8 hover:scale-110 cursor-pointer" src="/github.svg" alt={'linkedin'} width={24} height={24} /></Link>
+          <Link href="/linkedin.svg"><p className="text-gray-400 font-bold border-2 border-gray-400 rounded-lg px-2 py-1 hover:scale-110 cursor-pointer">Resume</p></Link>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      {/* Skills */}
+      <motion.div className="w-[72%] mx-auto"
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={variants}
+      >
+        <p className="text-3xl font-bold text-white/30 text-center mb-8">Skills</p>
+        <div className="flex flex-wrap gap-2 w-[60%] mx-auto">
+            <p className='skill'>HTML</p>
+            <p className='skill'>CSS</p>
+            <p className='skill'>TailwindCSS</p>
+            <p className='skill'>JavaScript</p>
+            <p className='skill'>TypeScript</p>
+            <p className='skill'>Python</p>
+            <p className='skill'>React</p>
+            <p className='skill'>Nextjs</p>
+            <p className='skill'>Svelte</p>
+            <p className='skill'>Node</p>
+            <p className='skill'>Express</p>
+            <p className='skill'>MongoDB</p>
+            <p className='skill'>MySQL</p>
+            <p className='skill'>TypeORM</p>
+            <p className='skill'>Prisma</p>
+            <p className='skill'>Jest</p>
+            <p className='skill'>AWS</p>
+            <p className='skill'>Git</p>
+            <p className='skill'>Docker</p>
+            <p className='skill'>Linux</p>
+            <p className='skill'>Vercel</p>
+            <p className='skill'>Firebase</p>
+            <p className='skill'>Webpack</p>
+        </div>
+      </motion.div>
+      {/* Projects */}
+      <div className="flex flex-col-reverse w-[80%] md:w-[72%] mx-auto">
+      <motion.div className=" flex-1 mx-auto w-[80%]"
+                      ref={ref3}
+                      animate={controls3}
+                      initial="hidden"
+                      variants={variants}
+      >
+        <p className="text-3xl font-bold text-white/30 text-center my-16">Projects</p>
+        <div className="w-full mt-4 flex flex-col gap-6">
+        <ProjectTile 
+          title="The Lounge" 
+          description="A platform where users can create lobbies and play the classic multiplayer card game of Court Piece with with friends." 
+          techs={["Nextjs", "TailwindCSS", "Node", "Express", "MongoDB", "SocketIO"]} 
+          classes="w-3/4"
+          url=""
         />
+        <ProjectTile 
+          title="Discord Clone" 
+          description="Create and join text, audio and video channels and chat with friends, share files and documents." 
+          techs={["Nextjs", "TailwindCSS", "Shadcn", "SocketIO", "MySQL", "Prisma"]} 
+          classes="w-2/3"
+          url=""
+          />
+        <ProjectTile 
+          title="DevCircle" 
+          description="A social platform connecting developers, who can then share their work. Developers add their links and personal details to let others know what they are upto." 
+          techs={["React", "Redux", "Nodejs", "Express", "MongoDB"]} 
+          classes="w-2/5"
+          url=""
+          />
+        <ProjectTile 
+          title="Recipo" 
+          description="A food ingredients application. This app uses an external API to present the ingredients of the dish selected by the user. Moreover, user and add the list of ingredients to shopping" 
+          techs={["HTML", "CSS", "JavaScript", "APIs"]} 
+          classes="w-2/5"
+          url="https://brave-hawking-18011e.netlify.app/"
+        />
+
+        </div>
+      </motion.div>
+      {/* Experience */}
+        <motion.div className="flex-1"
+                ref={ref2}
+                animate={controls2}
+                initial="hidden"
+                variants={variants}
+        >
+
+          <p className="text-3xl font-bold text-white/30 text-center my-16">Experience</p>
+          <div className="flex flex-col gap-y-16">
+          <Experience 
+            company="Tintash, Pakistan"
+            title="Software Engineer" 
+            time="July 2022 - Present"
+            desc="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words"
+            skills={["JavaScript", "TypeScript", "Svelte", "Nextjs", "Nodejs", "TypeORM", "MySQL", "Stripe", "AWS", "Blockchain", "Stacks Blockchain", "Stacks.js"]}
+            />
+          <Experience 
+            company="AlphaSquad, Pakistan"
+            title="Frontend Engineer" 
+            time="July 2021 - Sept 2021"
+            desc="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words"
+            skills={["HTML", "CSS", "JavaScript", "React", "Figma", "Webpack"]}
+            />
+          </div>
+        </motion.div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* Footer */}
+      <div className="w-[80%] mt-12 mx-auto ">
+        <p className="text-white/20 italic text-sm text-center">Designed and developed by Bilal Waheed.</p>
+        <p className="mt-3 text-white/20 font italic text-sm text-center">P.S. This website is still a WIP.</p>
       </div>
-    </main>
+    </div>
   )
 }

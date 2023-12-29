@@ -1,0 +1,39 @@
+{/* PLs */}
+          <div className="flex flex-col items-center gap-y-4 flex-1">
+          <p className="text-xl font-semibold text-gray-300 text-center">Programming Languages</p>
+          <div className="flex flex-wrap gap-2">
+            <p className='skill'>JavaScript</p>
+            <p className='skill'>TypeScript</p>
+            <p className='skill'>Python</p>
+            <p className='skill'>Php</p>
+            <p className='skill'>HTML</p>
+            <p className='skill'>CSS</p>
+          </div>
+          </div>
+          {/* Libs */}
+          <div className="flex flex-col gap-y-4 flex-1">
+          <p className="text-xl font-semibold text-gray-300 text-center">Libraries and Frameworks</p>
+          <div className="flex flex-wrap gap-2">
+            <p className='skill'>React</p>
+            <p className='skill'>Nextjs</p>
+            <p className='skill'>Svelte</p>
+            <p className='skill'>Node</p>
+            <p className='skill'>Express</p>
+            <p className='skill'>TailwindCSS</p>
+            <p className='skill'>Jest</p>
+            {/* <p className='skill'>Express</p> */}
+          </div>
+          </div>
+          {/* Tools */}
+          <div className="flex flex-col gap-y-4 flex-1">
+          <p className="text-xl font-semibold text-gray-300 text-center">Tools and Platforms</p>
+          <div className="flex flex-wrap gap-2">
+            <p className='skill'>AWS</p>
+            <p className='skill'>Git</p>
+            <p className='skill'>Docker</p>
+            <p className='skill'>Linux</p>
+            <p className='skill'>Vercel</p>
+            <p className='skill'>Firebase</p>
+            <p className='skill'>Webpack</p>
+          </div>
+          </div>
