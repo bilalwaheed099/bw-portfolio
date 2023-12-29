@@ -16,7 +16,7 @@ export const Experience = ({company, title, time, desc, skills}: ExperienceProps
             <p className="mt-3 text-white/30 text-[14px]">{desc}</p>
             <div className="flex flex-wrap gap-3 mt-4">
                 {skills.map(skill => (
-                    <span className="skill-tag">{skill}</span>
+                    <span key="skill" className="skill-tag">{skill}</span>
                 ))}
             </div>
         </div>
