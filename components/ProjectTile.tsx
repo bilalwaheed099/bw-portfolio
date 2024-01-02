@@ -34,7 +34,7 @@ export const ProjectTile = ({url, title, description, techs, classes}: ProjectTi
   }
       
     return (
-        <Link href={url}>
+        <Link href={url} className="relative z-100">
         <div className={`text-center md:text-start text-white bg-gray-300/10 p-6 rounded-xl w-full cursor-pointer hover:scale-[102%] hover:bg-gray-100/20 transition`}
         onMouseEnter={handleMouseEnterControls}
         onMouseLeave={handleMouseLeaveControls}

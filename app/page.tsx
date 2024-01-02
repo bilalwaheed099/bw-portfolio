@@ -50,31 +50,86 @@ export default function Home() {
 
   return (
     <div className='bg-black min-h-screen pb-24' onMouseMove={e => handleMouseMove(e)}>
-      {/* <motion.div
-        className="w-[240px] h-[240px] bg-gray-300/10 absolute rounded-full blur-2xl"
+      <motion.div
+        className="w-[320px] h-[320px] bg-gray-300/10 absolute rounded-full blur-2xl -z-100"
         animate={{
-          x: mousePos.x - 120,
-          y: mousePos.y - 120
+          x: mousePos.x - 160,
+          y: mousePos.y - 160
         }}
-        transition={{ type: "tween" }}
+        transition={{
+          duration: 0.08,
+          delay: 0,
+          ease: "linear"
+        }}
       >
 
-      </motion.div> */}
+      </motion.div>
       {/* HERO */}
       <div className="w-[90%] md:w-[72%] mx-auto flex flex-col justify-center items-center h-screen">
-        <p className="text-gray-400 font-bold text-[2.6rem] md:text-[3.2rem] text-center">Bilal Waheed</p>
-        <p className="text-gray-100 font-semibold text-[1.4rem] text-[1.8rem] text-center">Full-stack engineer</p>
-        <p className="text-white/30 w-3/4 md:w-1/2 my-3 text-center">
-        Lorem ipsum dolor sit amet incididunt, quis nostrud exercitation ullamco laboris nisi ut aliquip ex proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
-        <div className="flex gap-x-5 mt-4 items-center z-10">
-          <Link href="https://www.linkedin.com/in/bilal-w-27789ba4/" target='_blank'><Image className="w-9 h-9 hover:scale-110 cursor-pointer" src="/linkedin.svg" alt={'github'} width={24} height={24} /></Link>
-          <Link href="https://github.com/bilalwaheed099" target='_blank'><Image className="w-8 h-8 hover:scale-110 cursor-pointer" src="/github.svg" alt={'linkedin'} width={24} height={24} /></Link>
-          <Link href="/linkedin.svg"><p className="text-gray-400 font-bold border-2 border-gray-400 rounded-lg px-2 py-1 hover:scale-110 cursor-pointer">Resume</p></Link>
-        </div>
+        {/* <p className="text-gray-100/10 font-bold text-[1rem] md:text-[1.2rem]">Hi! I'm</p> */}
+        <motion.div className="w-full flex flex-col justify-center items-center"
+          initial={{
+            y: "-40%",
+            opacity: 0 
+          }}
+          animate={{
+            y: "0",
+            opacity: 1
+          }}
+          transition={{
+            duration: 1.5,
+            // type: "tween",
+            delay: 0,
+            ease: 'anticipate'
+          }}
+        >
+          <p className="text-gray-400 font-bold text-[2.6rem] md:text-[3.2rem] text-center tracking-wide">Hi! I'm Bilal,</p>
+          <p className="text-gray-100 font-semibold text-[1.4rem] text-[1.8rem] text-center">a full-stack engineer.</p>
+        </motion.div>
+        <motion.div className="w-full flex flex-col justify-center items-center mt-6">
+          <motion.p className="text-white/30 w-3/4 md:w-1/2 my-3 text-center"
+           initial={{
+            x: "-35%",
+            opacity: 0, 
+            rotate: 0
+          }}
+          animate={{
+            x: "0",
+            opacity: 1,
+            rotate: 360
+          }}
+          transition={{
+            duration: 3.2,
+            // type: "tween",
+            delay: 0,
+            ease: 'anticipate'
+          }}
+          >
+            I build frontends as well as backends. I also have experience in developing blockchain applications.
+          </motion.p>
+          <motion.div className="flex gap-x-5 mt-4 items-center z-10"
+           initial={{
+            y: "35%",
+            opacity: 0 
+          }}
+          animate={{
+            y: "0",
+            opacity: 1
+          }}
+          transition={{
+            duration: 1.5,
+            // type: "tween",
+            delay: 0,
+            ease: 'anticipate'
+          }}>
+            <Link href="https://www.linkedin.com/in/bilal-w-27789ba4/" target='_blank'><Image className="w-9 h-9 hover:scale-110 cursor-pointer" src="/linkedin.svg" alt={'github'} width={24} height={24} /></Link>
+            <Link href="https://github.com/bilalwaheed099" target='_blank'><Image className="w-8 h-8 hover:scale-110 cursor-pointer" src="/github.svg" alt={'linkedin'} width={24} height={24} /></Link>
+            <Link href="/resume.pdf" target='_blank'><p className="text-gray-400 font-bold border-2 border-gray-400 rounded-lg px-2 py-1 hover:scale-110 cursor-pointer">Resume</p></Link>
+          </motion.div>
+        </motion.div>
       </div>
       {/* Skills */}
-      <motion.div className="w-[72%] mx-auto"
+      <motion.div className="w-[72%] mx-auto mb-20"
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -109,34 +164,34 @@ export default function Home() {
       </motion.div>
       {/* Projects */}
       <div className="flex flex-col-reverse w-[90%] md:[w-80%] md:w-[72%] mx-auto">
-      <motion.div className=" flex-1 mx-auto w-[90%] md:w-[80%]"
+      <motion.div className=" flex-1 mx-auto w-[90%] md:w-[80%] mb-12"
                       ref={ref3}
                       animate={controls3}
                       initial="hidden"
                       variants={variants}
       >
-        <p className="text-3xl font-bold text-white/30 text-center my-16">Projects</p>
+        <p className="text-3xl font-bold text-white/30 text-center mt-16 mb-12">Projects</p>
         <div className="w-full mt-4 flex flex-col gap-10">
         <ProjectTile 
           title="The Lounge" 
           description="A platform where users can create lobbies and play the classic multiplayer card game of Court Piece with with friends." 
           techs={["Nextjs", "TailwindCSS", "Node", "Express", "MongoDB", "SocketIO"]} 
           classes="w-3/4"
-          url=""
+          url="/projects/thelounge"
         />
         <ProjectTile 
           title="Discord Clone" 
           description="Create and join text, audio and video channels and chat with friends, share files and documents." 
           techs={["Nextjs", "TailwindCSS", "Shadcn", "SocketIO", "MySQL", "Prisma"]} 
           classes="w-2/3"
-          url=""
+          url="https://wordcord-production.up.railway.app/"
           />
         <ProjectTile 
           title="DevCircle" 
           description="A social platform connecting developers, who can then share their work. Developers add their links and personal details to let others know what they are upto." 
           techs={["React", "Redux", "Nodejs", "Express", "MongoDB"]} 
           classes="w-2/5"
-          url=""
+          url="https://github.com/bilalwaheed099/mern-DevCircle-server"
           />
         <ProjectTile 
           title="Recipo" 
@@ -144,6 +199,13 @@ export default function Home() {
           techs={["HTML", "CSS", "JavaScript", "APIs"]} 
           classes="w-2/5"
           url="https://brave-hawking-18011e.netlify.app/"
+        />
+        <ProjectTile 
+          title="Webber" 
+          description="A complete website frontend made using React and TailwindCSS. The UI is completely responsive." 
+          techs={["React", "TailwindCSS", "Vercel"]} 
+          classes="w-2/5"
+          url="https://webber.vercel.app/"
         />
 
         </div>
@@ -156,20 +218,20 @@ export default function Home() {
                 variants={variants}
         >
 
-          <p className="text-3xl font-bold text-white/30 text-center my-12">Experience</p>
+          <p className="text-3xl font-bold text-white/30 text-center mb-12">Experience</p>
           <div className="flex flex-col gap-y-16">
           <Experience 
             company="Tintash, Pakistan"
             title="Software Engineer" 
             time="July 2022 - Present"
-            desc="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words"
-            skills={["JavaScript", "TypeScript", "Svelte", "Nextjs", "Nodejs", "TypeORM", "MySQL", "Stripe", "AWS", "Blockchain", "Stacks Blockchain", "Stacks.js"]}
+            desc="I work on frontend as well as backend in blockchain domain. I develop APIs, create frontend flows, write test cases, document stuff, manage SSL certificates etc."
+            skills={["JavaScript", "TypeScript", "Svelte", "Nextjs", "Nodejs", "TypeORM", "MySQL", "Stripe", "Voucherify", "AWS", "Blockchain", "Stacks Blockchain", "Stacks.js"]}
             />
           <Experience 
             company="AlphaSquad, Pakistan"
             title="Frontend Developer (Intern)" 
             time="July 2021 - Sept 2021"
-            desc="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words"
+            desc="Developed a plugin for Figma to convert a Figma file to HTML + TailwindCSS code. Also translated Figma designs to frontends using React and tailwindCSS."            
             skills={["HTML", "CSS", "JavaScript", "React", "Figma", "Webpack"]}
             />
           </div>
@@ -177,7 +239,7 @@ export default function Home() {
       </div>
       {/* Footer */}
       <div className="w-[80%] mt-12 mx-auto ">
-        <p className="text-white/20 italic text-sm text-center">Designed and developed by Bilal Waheed.</p>
+        <p className="text-white/20 italic text-sm text-center">Designed and developed by Bilal Waheed, using Nextjs, Tailwind and Framer-motion.</p>
         <p className="mt-3 text-white/20 font italic text-sm text-center">P.S. This website is still a WIP.</p>
       </div>
     </div>
