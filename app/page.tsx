@@ -83,7 +83,7 @@ export default function Home() {
             ease: 'anticipate'
           }}
         >
-          <p className="text-gray-400 font-bold text-[2.6rem] md:text-[3.2rem] text-center tracking-wide">Hi! I'm Bilal,</p>
+          <p className="text-gray-400 font-bold text-[2.6rem] md:text-[3.2rem] text-center tracking-wide">Hi! I&apos;m Bilal,</p>
           <p className="text-gray-100 font-semibold text-[1.4rem] text-[1.8rem] text-center">a full-stack engineer.</p>
         </motion.div>
         <motion.div className="w-full flex flex-col justify-center items-center mt-6">

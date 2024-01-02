@@ -13,9 +13,9 @@ const Home = () => {
                 {/* Details */}
                 <p className="text-gray-100/40 text-md mt-8 text-center md:text-start w-[90%] md:w-[80%]">You can create your own lobby and invite your friends to that one.</p>
                 <Image src={"/thelounge/create-lobby.png"} loading="lazy" alt={""} width="2000" height="2000" className="w-[90%] md:w-[80%] mt-8"/>
-                <p className="text-gray-100/40 text-md mt-8 text-center md:text-start w-[90%] md:w-[80%]">Or you can search another user's lobby from the search bar and join that one.</p>
+                <p className="text-gray-100/40 text-md mt-8 text-center md:text-start w-[90%] md:w-[80%]">Or you can search another user&apos;s lobby from the search bar and join that one.</p>
                 <Image src={"/thelounge/search-rooms.png"} loading="lazy" alt={""} width="2000" height="2000" className="w-[90%] md:w-[80%] mt-8"/>
-                <p className="text-gray-100/40 text-md mt-8 text-center md:text-start w-[90%] md:w-[80%]">Or you can search another user's lobby from the search bar and join that one.</p>
+                <p className="text-gray-100/40 text-md mt-8 text-center md:text-start w-[90%] md:w-[80%]">Or you can search another user&apos;s lobby from the search bar and join that one.</p>
                 <Image src={"/thelounge/lobby-joined.png"} loading="lazy" alt={""} width="2000" height="2000" className="w-[90%] md:w-[80%] mt-8"/>
                 <p className="text-gray-100/40 text-md mt-8 text-center md:text-start w-[90%] md:w-[80%]">Once inside the lobby, after clicking on the connect button you can see the list of players in the current lobby. You can also use the group chat by clicking on the message icon in the top-right of the screen.</p>
                 <Image src={"/thelounge/messages.png"} loading="lazy" alt={""} width="2000" height="2000" className="w-[90%] md:w-[80%] mt-8"/>
