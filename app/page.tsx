@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className='bg-black min-h-screen pb-24' onMouseMove={e => handleMouseMove(e)}>
       <motion.div
-        className="w-[320px] h-[320px] bg-gray-300/10 absolute rounded-full blur-2xl -z-100"
+        className="w-[320px] h-[320px] bg-gray-300/10 hidden md:block absolute rounded-full blur-2xl -z-100"
         animate={{
           x: mousePos.x - 160,
           y: mousePos.y - 160
