@@ -7,9 +7,24 @@ body {
 }
 
 .skill {
-  @apply border p-1 px-3 font-semibold rounded-lg border-gray-200/40 text-white text-[12px]
+  @apply border p-1 px-3 font-semibold rounded-lg border-gray-200/40 text-white text-[14px] tracking-wider glow-light;
 }
 
 .skill-tag {
- @apply bg-gray-400/80 rounded-3xl p-1 px-3 text-gray-900/80 text-[0.8rem] font-bold text-center
+  @apply bg-gray-400/80 rounded-3xl p-1 px-3 text-gray-900/80 text-[0.8rem] font-bold text-center;
+}
+.heading {
+  @apply tracking-widest glow-dark;
+}
+
+.glow-light {
+  text-shadow: 0 0 8px rgba(243, 244, 246, 0.6);
+}
+
+.glow-medium {
+  text-shadow: 0 0 8px rgba(156, 163, 175, 0.6);
+}
+
+.glow-dark {
+  text-shadow: 0 0 8px rgba(156, 163, 175, 0.4);
 }
