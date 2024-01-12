@@ -178,10 +178,10 @@ export default function Home() {
           <p className="skill">TypeScript</p>
           <p className="skill">Python</p>
           <p className="skill">React</p>
-          <p className="skill">Nextjs</p>
+          <p className="skill">Next.js</p>
           <p className="skill">Svelte</p>
-          <p className="skill">Node</p>
-          <p className="skill">Express</p>
+          <p className="skill">Node.ja</p>
+          <p className="skill">Express.ja</p>
           <p className="skill">MongoDB</p>
           <p className="skill">MySQL</p>
           <p className="skill">TypeORM</p>
