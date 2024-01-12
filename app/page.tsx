@@ -109,9 +109,9 @@ export default function Home() {
               ease: 'anticipate',
             }}
           >
-            I build frontends as well as backends. Currently I'm working on
+            I build frontends as well as backends. Currently I&apos;m working on
             full-stack projects in blockchain domain. Checkout The Lounge below,
-            a cool side project that I'm building.
+            a cool side project that I&apos;m building.
           </motion.p>
           <motion.div
             className="flex gap-x-8 mt-12 items-center z-10"
