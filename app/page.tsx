@@ -47,10 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div
-      className="bg-black min-h-screen pb-24"
-      onMouseMove={(e) => handleMouseMove(e)}
-    >
+    <div className="bg-black min-h-screen pb-24" onMouseMove={(e) => handleMouseMove(e)}>
       <motion.div
         className="w-[320px] h-[320px] bg-gray-300/10 hidden md:block absolute rounded-full blur-2xl -z-100"
         animate={{
@@ -109,9 +106,8 @@ export default function Home() {
               ease: 'anticipate',
             }}
           >
-            I build frontends as well as backends. Currently I&apos;m working on
-            full-stack projects in blockchain domain. Checkout The Lounge below,
-            a cool side project that I&apos;m building.
+            I build frontends as well as backends. Currently I&apos;m working on full-stack projects in blockchain
+            domain. Checkout The Lounge below, a cool side project that I&apos;m building.
           </motion.p>
           <motion.div
             className="flex gap-x-8 mt-12 items-center z-10"
@@ -130,10 +126,7 @@ export default function Home() {
               ease: 'anticipate',
             }}
           >
-            <Link
-              href="https://www.linkedin.com/in/bilal-w-27789ba4/"
-              target="_blank"
-            >
+            <Link href="https://www.linkedin.com/in/bilal-w-27789ba4/" target="_blank">
               <Image
                 className="w-9 h-9 hover:scale-110 cursor-pointer"
                 src="/linkedin.svg"
@@ -160,16 +153,8 @@ export default function Home() {
         </motion.div>
       </div>
       {/* Skills */}
-      <motion.div
-        className="w-[72%] mx-auto mb-20"
-        ref={ref}
-        animate={controls}
-        initial="hidden"
-        variants={variants}
-      >
-        <p className="text-3xl font-bold text-white/30 text-center mb-12 heading">
-          Skills
-        </p>
+      <motion.div className="w-[72%] mx-auto mb-20" ref={ref} animate={controls} initial="hidden" variants={variants}>
+        <p className="text-3xl font-bold text-white/30 text-center mb-12 heading">Skills</p>
         <div className="flex flex-wrap justify-center gap-3 w-[90%] md:w-[64%] mx-auto">
           <p className="skill">HTML</p>
           <p className="skill">CSS</p>
@@ -205,35 +190,19 @@ export default function Home() {
           initial="hidden"
           variants={variants}
         >
-          <p className="text-3xl font-bold text-white/30 text-center mt-16 mb-16 heading">
-            Projects
-          </p>
+          <p className="text-3xl font-bold text-white/30 text-center mt-16 mb-16 heading">Projects</p>
           <div className="w-full mt-4 flex flex-col gap-10">
             <ProjectTile
               title="The Lounge"
               description="A platform where users can create lobbies and play the classic multiplayer card game of Court Piece with with friends."
-              techs={[
-                'Nextjs',
-                'TailwindCSS',
-                'Node',
-                'Express',
-                'MongoDB',
-                'SocketIO',
-              ]}
+              techs={['Nextjs', 'TailwindCSS', 'Node', 'Express', 'MongoDB', 'SocketIO']}
               classes="w-3/4"
               url="/projects/thelounge"
             />
             <ProjectTile
-              title="Discord Clone"
+              title="Wordcord"
               description="Create and join text, audio and video channels and chat with friends, share files and documents."
-              techs={[
-                'Nextjs',
-                'TailwindCSS',
-                'Shadcn',
-                'SocketIO',
-                'MySQL',
-                'Prisma',
-              ]}
+              techs={['Nextjs', 'TailwindCSS', 'Shadcn', 'SocketIO', 'MySQL', 'Prisma']}
               classes="w-2/3"
               url="https://wordcord-production.up.railway.app/"
             />
@@ -261,16 +230,8 @@ export default function Home() {
           </div>
         </motion.div>
         {/* Experience */}
-        <motion.div
-          className="flex-1"
-          ref={ref2}
-          animate={controls2}
-          initial="hidden"
-          variants={variants}
-        >
-          <p className="text-3xl font-bold text-white/30 text-center mb-16 heading">
-            Experience
-          </p>
+        <motion.div className="flex-1" ref={ref2} animate={controls2} initial="hidden" variants={variants}>
+          <p className="text-3xl font-bold text-white/30 text-center mb-16 heading">Experience</p>
           <div className="flex flex-col gap-y-20">
             <Experience
               company="Tintash, Pakistan"
@@ -298,14 +259,7 @@ export default function Home() {
               title="Frontend Developer (Intern)"
               time="July 2021 - Sept 2021"
               desc="Developed a plugin for Figma to convert a Figma file to HTML + TailwindCSS code. Also translated Figma designs to frontends using React and tailwindCSS."
-              skills={[
-                'HTML',
-                'CSS',
-                'JavaScript',
-                'React',
-                'Figma',
-                'Webpack',
-              ]}
+              skills={['HTML', 'CSS', 'JavaScript', 'React', 'Figma', 'Webpack']}
             />
           </div>
         </motion.div>
@@ -313,12 +267,9 @@ export default function Home() {
       {/* Footer */}
       <div className="w-[80%] mt-12 mx-auto ">
         <p className="text-white/20 italic text-sm text-center">
-          Designed and developed by Bilal Waheed, using Nextjs, Tailwind and
-          Framer-motion.
+          Designed and developed by Bilal Waheed, using Nextjs, Tailwind and Framer-motion.
         </p>
-        <p className="mt-3 text-white/20 font italic text-sm text-center">
-          P.S. This website is still a WIP.
-        </p>
+        <p className="mt-3 text-white/20 font italic text-sm text-center">P.S. This website is still a WIP.</p>
       </div>
     </div>
   );
