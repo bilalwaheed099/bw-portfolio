@@ -204,7 +204,7 @@ export default function Home() {
               description="Create and join text, audio and video channels and chat with friends, share files and documents."
               techs={['Nextjs', 'TailwindCSS', 'Shadcn', 'SocketIO', 'MySQL', 'Prisma']}
               classes="w-2/3"
-              url="https://wordcord-production.up.railway.app/"
+              url="https://www.wordcod.online/"
             />
             <ProjectTile
               title="DevCircle"
