@@ -144,11 +144,11 @@ export default function Home() {
                 height={24}
               />
             </Link>
-            <Link href="/resume.pdf" target="_blank">
+{/*             <Link href="/resume.pdf" target="_blank">
               <p className="text-gray-400 font-bold border-2 border-gray-400 rounded-lg px-2 py-1 hover:scale-110 cursor-pointer">
                 Resume
               </p>
-            </Link>
+            </Link> */}
           </motion.div>
         </motion.div>
       </div>
