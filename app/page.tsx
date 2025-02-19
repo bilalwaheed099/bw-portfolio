@@ -236,7 +236,7 @@ export default function Home() {
             <Experience
               company="Tintash, Pakistan"
               title="Software Engineer"
-              time="July 2022 - Present"
+              time="July 2022 - November 2024"
               desc="I work on frontend as well as backend in blockchain domain. I develop APIs, create frontend flows, write test cases, document stuff, manage SSL certificates etc."
               skills={[
                 'JavaScript',
